@@ -1,0 +1,69 @@
+{%extends 'base.html'%}
+{%block content%}
+{%load static%}
+
+<form method="POST" action="" >
+    {% csrf_token %}
+<div class="page-wrapper">
+<div class="content container-fluid">
+<div class="row">
+<div class="col-xl-12 col-sm-12 col-12 ">
+<div class="breadcrumb-path mb-4">
+<ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a>
+</li>
+<li class="breadcrumb-item active"> Companies</li>
+</ul>
+<h3>Create Companies</h3>
+</div>
+</div>
+<div class="col-xl-12 col-sm-12 col-12 ">
+<div class="card">
+<div class="card-header">
+<h2 class="card-titles">Company Details <span>Organized and secure.</span></h2>
+</div>
+<div class="card-body">
+<div class="row">
+<div class="col-xl-6 col-sm-12 col-12 ">
+<div class="form-group">
+<input type="text" placeholder="Company Name" value="{{comp_data.cName}}" name="cName">
+</div>
+</div>
+<div class="col-xl-6 col-sm-12 col-12 ">
+<div class="form-group">
+<input type="text" placeholder="Email" value="{{comp_data.cEmail}}" name="cEmail">
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-xl-6 col-sm-12 col-12 ">
+<div class="form-group">
+<input type="text" placeholder="website" value="{{comp_data.cUrl}}" name="cUrl">
+</div>
+</div>
+<div class="col-xl-6 col-sm-12 col-12 ">
+<div class="form-group">
+<input type="text" placeholder="Address" value="{{comp_data.cAddress}}" name="cAddress">
+</div>
+</div>
+</div>
+<div class="row">
+	<div class="col-xl-6 col-sm-12 col-12 ">
+	<div class="form-group">
+	<input type="text" placeholder="Phone Number" value="{{comp_data.cContact}}" name="cContact">
+	</div>
+	</div>
+	<!-- <div class="col-xl-6 col-sm-12 col-12 ">
+	<div class="form-group">
+	<input type="text" placeholder="Email Address">
+	</div>
+	</div>
+	</div> -->
+
+</div>
+</div>
+</div>
+
+<button type="submit" class="btn-success">Submit</button>
+
+{% endblock content %}

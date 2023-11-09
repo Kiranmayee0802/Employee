@@ -1,0 +1,10 @@
+
+  
+  <div class="container">
+    <h2>Delete</h2>
+    <p>Are you sure you want to delete</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+  </div>

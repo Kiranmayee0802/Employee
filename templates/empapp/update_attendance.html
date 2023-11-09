@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- attendance/templates/attendance/update_attendance.html -->
+
+<head>
+    <title>Update Employee Attendance</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'empapp/styles.css' %}">
+</head>
+<body>
+    <div class="page-wrapper">
+    <div class="content container-fluid">
+    <center><h1 style="color: blue;">Update Employee Attendance</h1><br></center>
+    <div class="update_att">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update Attendance</button>
+    </form><br>
+    <a class="back-link" href="{% url 'attendance_list' %}">Back to Attendance List</a>
+    </div>
+    </div>
+</div>
+    {% endblock content %}

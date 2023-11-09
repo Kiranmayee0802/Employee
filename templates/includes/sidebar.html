@@ -1,0 +1,130 @@
+{%load static%}
+
+<style>
+    /* Style the container that will hold the dropdown */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Style the button that will open the dropdown */
+    .dropdown-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Style the dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    /* Style the dropdown content links */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    /* Change color of dropdown content on hover */
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    /* Show the dropdown content when the button is clicked */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+ 
+</style>
+
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-inner slimscroll">
+    <div class="sidebar-contents">
+    <div id="sidebar-menu" class="sidebar-menu">
+    <div class="mobile-show">
+    <div class="offcanvas-menu">
+    <div class="user-info align-center bg-theme text-center">
+    <span class="lnr lnr-cross  text-white" id="mobile_btn_close">X</span>
+    <a href="javascript:void(0)" class="d-block menu-style text-white">
+    <div class="user-avatar d-inline-block mr-3">
+    <img src="{% static 'assets/img/profiles/avatar-18.jpg' %}" alt="user avatar" class="rounded-circle" width="50">
+    </div>
+    </a>
+    </div>
+    </div>
+    <div class="sidebar-input">
+    <div class="top-nav-search">
+    <form>
+    <input type="text" class="form-control" placeholder="Search here">
+    <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+    </form>
+    </div>
+    </div>
+     </div>
+    <ul>
+    <li class="active">
+    <a href="{% url 'index' %}"><img src="{% static 'assets/img/home.svg' %}" alt="sidebar_img"> <span>Dashboard</span></a>
+    </li>
+    <li>
+    <a href="{% url 'addemp' %}"><img src="{% static 'assets/img/employee.svg' %}" alt="sidebar_img"><span> Employees</span></a>
+    <a href="{% url 'addemp' %}">Add New</a>
+    <a href="#">Update</a>
+    <a href="{% url 'employee_list' %}">View</a>
+
+</li>
+
+    <!-- <div class="dropdown">
+        <button class="dropdown-button"><img src="{% static 'assets/img/employee.svg' %}" alt="sidebar_img"><span> Employees</span></button> -->
+        <!-- <div class="dropdown-content">
+          <a href="{% url 'addemp' %}">Add New</a>
+          <a href="#">Update</a>
+          <a href="#">View</a>
+        </div>
+      </div> -->
+
+    <li>
+    <a href="{% url 'addcomp' %}"><img src="{% static 'assets/img/company.svg' %}" alt="sidebar_img"> <span> Company</span></a>
+    <a href="{% url 'addcomp' %}">Add New</a>
+    <a href="#">Update</a>
+    <a href="{% url 'comp_list' %}">View</a>    
+</li>
+    <!-- <li>
+    <a href="calendar.html"><img src="{% static 'assets/img/calendar.svg' %}" alt="sidebar_img"> <span>Calendar</span></a>
+    </li>
+    <li>
+    <a href="leave.html"><img src="{% static 'assets/img/leave.svg' %}" alt="sidebar_img"> <span>Leave</span></a>
+    </li>
+    <li>
+    <a href="review.html"><img src="{% static 'assets/img/review.svg' %}" alt="sidebar_img"><span>Review</span></a>
+    </li>
+    <li>
+    <a href="report.html"><img src="{% static 'assets/img/report.svg' %}" alt="sidebar_img"><span>Report</span></a>
+    </li>-->
+    <li>
+    <a href="{% url 'update_attendance' %}"><img src="{% static 'assets/img/manage.svg' %}" alt="sidebar_img"> <span>Mark Attendance</span></a>
+    </li> 
+    <li>
+    <a href="settings.html"><img src="{% static 'assets/img/settings.svg' %}" alt="sidebar_img"><span>Settings</span></a>
+    </li>
+    <li>
+    <a href="profile.html"><img src="{% static 'assets/img/profile.svg' %}" alt="sidebar_img"> <span>Profile</span></a>
+    </li>
+    </ul>
+    <ul class="logout">
+    <li>
+    <a href="profile.html"><img src="{% static 'assets/img/logout.svg' %}" alt="sidebar_img"><span>Log out</span></a>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>

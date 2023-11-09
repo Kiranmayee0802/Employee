@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="page-wrapper">
+<div class="content container-fluid">
+
+  <center><h2 style="color:red;margin-top:4%">Company List</h2></center>
+        
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>URL</th>
+        <th>Address</th>
+        <th>Contact</th>
+        
+          
+      </tr>
+    </thead>
+
+    <tbody>
+
+      {% for i in Company %}
+         <tr>
+              <td>{{i.cName}}</td>
+              <td>{{i.cEmail}}</td>
+              <td>{{i.cUrl}}</td>
+              <td>{{i.cAddress}}</td>
+              <td>{{i.cContact}}</td>
+              <td><a href="{% url 'edit_comp' i.id %}" ><button class="btn btn-success">Edit</button></a>
+                <a href="{% url 'delete_comp' i.id %}" ><button class="btn btn-danger">delete</button>
+                  
+                </a>
+            </td>
+          </tr>
+      {% endfor %} 
+    </tbody> 
+</table>
+</div>
+</div>
+     
+{% endblock content %}

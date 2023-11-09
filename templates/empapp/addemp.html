@@ -1,0 +1,115 @@
+{%extends 'base.html'%}
+{%block content%}
+{%load static%}
+
+<form method="post" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+
+<div class="page-wrapper">
+<div class="content container-fluid">
+<div class="row">
+<div class="col-xl-12 col-sm-12 col-12 ">
+<div class="breadcrumb-path mb-4">
+<ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="index.html">Home</a>
+</li>
+<li class="breadcrumb-item active"> Employees</li>
+</ul>
+<h3>Create Employees</h3>
+</div>
+</div>
+<div class="col-xl-12 col-sm-12 col-12 ">
+<div class="card">
+<div class="card-header">
+<h2 class="card-titles">Basic Details <span>Organized and secure.</span></h2>
+</div>
+<div class="card-body">
+<div class="row">
+<div class="col-xl-6 col-sm-12 col-12 ">
+<div class="form-group">
+<input type="text" placeholder="First Name" name="fname" />
+</div>
+</div>
+<div class="col-xl-6 col-sm-12 col-12 ">
+<div class="form-group">
+<input type="text" placeholder="Last Name" name="lname" />
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-xl-6 col-sm-12 col-12 ">
+<div class="form-group">
+	<label>DOB</label><input type="date" placeholder="DOB" name="dob" />
+</div>
+</div>
+<div class="col-xl-6 col-sm-12 col-12 ">
+<div class="form-group">
+<input type="text" placeholder="Address" name="address" />
+</div>
+</div>
+</div>
+<div class="row">
+	<div class="col-xl-6 col-sm-12 col-12 ">
+	<div class="form-group">
+	<input type="text" placeholder="Phone Number" name="phno" />
+	</div>
+	</div>
+	<div class="col-xl-6 col-sm-12 col-12 ">
+	<div class="form-group">
+	<input type="text" placeholder="Email Address" name="email" />
+	</div>
+	</div>
+	</div>
+
+</div>
+</div>
+</div>
+<div class="col-xl-12 col-sm-12 col-12 ">
+<div class="card ">
+<div class="card-header">
+<h2 class="card-titles">Employment Details<span>Let everyone know the essentials so they're fully prepared.</span></h2>
+</div>
+<div class="card-body">
+<div class="row">
+<div class="col-xl-6 col-sm-12 col-12 ">
+<div class="form-group">
+
+</div>
+</div>
+<div class="col-xl-6 col-sm-12 col-12 ">
+<div class="form-group">
+<input type="text" placeholder="Designation" name="designation" />
+</div>
+ </div>
+</div>
+<div class="row">
+<div class="col-xl-6 col-sm-12 col-12 ">
+<div class="form-group">
+	<label>DOB</label><input type="date" placeholder="DOJ" name="doj" />
+</div>
+</div>
+
+
+
+<div class="col-xl-6 col-sm-12 col-12 ">
+<div class="form-group">
+	<input type="text" placeholder="Salary" name="salary" />
+</div>
+ </div>
+</div>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+<!-- <select class="select">
+<option value="Select leave">Permanent	</option>
+<option value="leave">Freelancer</option>
+</select>
+</div>
+</div> -->
+</div>
+</div>
+</div>
+</div>
+
+
+
+{% endblock content %}

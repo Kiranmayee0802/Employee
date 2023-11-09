@@ -1,0 +1,31 @@
+<!-- attendance/templates/attendance/attendance_list.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <title>Employee Attendance List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="page-wrapper">
+    <div class="content container-fluid">
+    <h1>Employee Attendance List</h1>
+    <table class="attendance-table">
+        <tr>
+            <th>Employee</th>
+            <th>Date</th>
+            <th>Status</th>
+        </tr>
+        {% for attendance in attendance_list %}
+            <tr>
+                <td>{{ attendance.employee }}</td>
+                <td>{{ attendance.date }}</td>
+                <td>{{ attendance.status }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a class="update-link" href="{% url 'update_attendance' %}">Update Attendance</a>
+</body>
+</div>
+</div>
+{% endblock content %}

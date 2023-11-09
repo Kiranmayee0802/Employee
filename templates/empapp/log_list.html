@@ -1,0 +1,37 @@
+ <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loglist</title>
+  </head>
+  <body>
+<div  class="container-fluid">
+    
+    <h2 id="h2">login List</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>USERNAME</th>
+          <th>PASSWORD</th>
+          <th>TYPE</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        {% for i in log %}
+           <tr>
+                <td>{{i.username}}</td>
+                <td>{{i.password}}</td>
+                <td>{{i.type}}</td>
+                <td><a href="{% url 'delete_log' i.id %}" ><button class="btn btn-danger">delete</button></a>
+              </td>
+            </tr>
+        {% endfor %} 
+      </tbody> 
+  </table>
+</div>
+  </body>
+  </html>
+ 
+

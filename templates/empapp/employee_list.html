@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="page-wrapper">
+<div class="content container-fluid">
+
+<center><h2 style="color:red;margin-top:4%">Employee List</h2></center>
+        
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>LName</th>
+        <th>DOB</th>
+        <th>ddress</th>
+        <th>Contact</th>
+        <th>Email</th>
+        <th>designation</th>
+        <th>Date of joining</th>
+        <th>Salary</th>  
+      </tr>
+    </thead>
+
+    <tbody>
+
+      {% for i in Employee %}
+         <tr>
+              <td>{{i.fname}}</td>
+              <td>{{i.lname}}</td>
+              <td>{{i.dob}}</td>
+              <td>{{i.address}}</td>
+              <td>{{i.phno}}</td>
+              <td>{{i.email}}</td>
+              <td>{{i.designation}}</td>
+              <td>{{i.doj}}</td>
+              <td>{{i.salary}}</td>
+              <td><a href="{% url 'edit_employee' i.id %}" ><button class="btn btn-success">Edit</button></a>
+                <a href="{% url 'delete_employee' i.id %}" ><button class="btn btn-danger">delete</button>
+                </a>
+            </td>
+          </tr>
+      {% endfor %} 
+    </tbody> 
+</table>
+</div>
+</div>
+     
+{% endblock content %}
